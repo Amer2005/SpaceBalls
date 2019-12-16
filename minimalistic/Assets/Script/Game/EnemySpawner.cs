@@ -20,7 +20,9 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //WTF IS THIS SHIT
         timer++;
+
         if(timer == SpawnTime)
         {
             timer = 0;
@@ -31,21 +33,14 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy()
     {
         int rand = Random.Range(1, 3);
+
         if (rand == 1)
         {
             Instantiate(Enemy, new Vector2(TopLeftBorder.transform.position.x, Random.Range(TopLeftBorder.transform.position.y, BottomRightBorder.transform.position.y)), Quaternion.identity);
         }
-        if (rand == 2)
+        else
         {
             Instantiate(Enemy, new Vector2(BottomRightBorder.transform.position.x, Random.Range(TopLeftBorder.transform.position.y, BottomRightBorder.transform.position.y)), Quaternion.identity);
-        }
-        if (rand == 3)
-        {
-            Instantiate(Enemy, new Vector2(Random.Range(TopLeftBorder.transform.position.x, BottomRightBorder.transform.position.x), BottomRightBorder.transform.position.y), Quaternion.identity);
-        }
-        if (rand == 4)
-        {
-            Instantiate(Enemy, new Vector2(Random.Range(TopLeftBorder.transform.position.x, BottomRightBorder.transform.position.x), TopLeftBorder.transform.position.y), Quaternion.identity);
         }
     }
 }
